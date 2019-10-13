@@ -1,11 +1,3 @@
 # Predicting-Admissions
-Using linear regression and jupyter notebook to predict admission rates to a university.
 
-Features: 
- - GPA
- - Research
- - TOEFL
- - GRE
- - University Rating
- - SOP
- - LOR
+In this experiment, I'm performing multiple hypotheses tests on the data in order to determine which features to keep and which model to use.
