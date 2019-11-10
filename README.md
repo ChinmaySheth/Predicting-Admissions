@@ -1,3 +1,3 @@
 # Predicting-Admissions
 
-In this experiment, I'm performing multiple hypotheses tests on the data in order to determine which features to keep and which model to use.
+I have implemented a working version of the Python code which performs an exploratory data analysis on the Admissions dataset. I also perform a hypothesis test in order to determine whether there is a correlation in the data. The next step is to implement a working SAS implementation.
