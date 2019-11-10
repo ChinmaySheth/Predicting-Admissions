@@ -14,3 +14,25 @@ TITLE "Multiple Linear Regression -- Admission Prediction Data";
 	;
 		
 	run;
+
+
+/* BOX COX TRANSFORMATION PROC TRANSREG */
+TITLE "Box Cox Transformation -- Admission Prediction Data";
+	proc transreg data=admpred plots=boxcox;
+		model boxcox(Chance_of_Admit / lambda=-6 to 6 by 0.05) = identity(GRE_Score) identity(TOEFL_Score) class(LOR SOP University_rating Research / effects) identity(CGPA);
+		output coefficients replace;
+	
+	run;
+	
+/* Transforming Chance_of_Admit and building another model with the respective transformation. */
+data admpredmodif; set admpred;
+transformedCOA = Chance_of_Admit**2.75;
+run;
+
+TITLE "Multiple Linear Regression -- Admission Prediction Data";
+	PROC GLM DATA=admpredmodif plots=(DIAGNOSTICS);
+		class SOP LOR University_Rating Research;
+		model transformedCOA = GRE_Score TOEFL_Score SOP LOR CGPA University_Rating Research /solution
+	;
+		
+	run;
