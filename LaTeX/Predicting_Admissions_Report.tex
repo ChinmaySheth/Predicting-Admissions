@@ -1,8 +1,10 @@
 \documentclass{article}
+
 \usepackage{amsfonts}
 \usepackage[utf8]{inputenc}
 \usepackage[english]{babel}
 \usepackage{graphicx}
+\usepackage{hyperref}
 \graphicspath{ {images/} }
 
 \title{Predicting Admissions}
@@ -20,7 +22,7 @@ In this exercise, I'm analyzing a university dataset which contains information 
 
 \section*{Dataset}
 
-The dataset that I am using was obtained from Kaggle and it contains data on university admission data. The dataset contains the following columns:
+The \href{https://www.kaggle.com/mohansacharya/graduate-admissions}{dataset} that I am using was obtained from Kaggle and it contains data on university admission data. The dataset contains the following columns:
 
 \begin{enumerate}
 
@@ -36,55 +38,60 @@ The dataset that I am using was obtained from Kaggle and it contains data on uni
 
 \end{enumerate}
 
+\section*{Data Exploration}
 
-The dataset contains 400 entries with no data missing.
+The dataset contains 400 entries with no data missing. The only categorical variable in the dataset is "Research" which has two values, 1 if the applicant has done research and 0 if they haven't.
 
+\section*{Analysis}
 \subsection*{Diagnostics}
 
-Through the PROC GLM function, SAS is easily able to build a basic linear model which we can further investigate to determine that it is satisfactory. PROC GLM is also able to differentiate between categorical and continuous regressors. Here we see the different possible categorical values that can be held in these independent variables.
+Through the PROC GLM function, SAS is easily able to build a basic linear model that considers all the variables with interactions, which can be further investigated to determine to see if the linear regression assumption are met. PROC GLM is also able to differentiate between categorical and continuous variables by indicating so in the CLASS definition of the function. As such, "Research" is specified as a categorical variable in the CLASS method, and "SERIAL NO." is not included since it provides no significant meaning as they are all random.
 
-\includegraphics[scale=1]{GLM_Procedure.png}
+In the diagnostic plots from Figure \ref{fig:basicmodeldiagnostics} there is a departure from the homoskedasticity assumption, that is of constant variance throughout the data, because of the decreasing variance in the data in the Residual vs Predicted Value plot and RStudent vs Predicted Value plot. There also appears to be a departure from the assumption of the expected value of the residuals to equal zero as the data in the two aforementioned plots is not centred around the horizontal zero axis. Finally, the data does not appear to be normally distributed as the Residual vs Quantile Plot shows that the points are not very closely hugging the reference line.
 
-Here we see the different possible categorical values that can be held in these independent variables. The current basic linear regression model contains 26 regressor variables where one is an intercept. Here are the respective estimates for each continuous variable regressor and categorical variable regerssor.
-
-\subsection*{Estimates}
-
-\includegraphics[scale=1]{Estimates.png}
-
-In all linear models we hope that the following four assumptions will be held:
-
-\begin{enumerate}
-
-\item $\mathbb{E}(\varepsilon)=0$
-\item $Var(\varepsilon)=\sigma^2$
-\item $Cov(\varepsilon_i, \varepsilon_j)=0$
-\item $\varepsilon_i$~$N(\sigma, (0,1))$
+\subsection*{Transformations}
+Using the data-driven Box-Cox technique, showed in Figure \ref{fig:boxcoxanalysis}, we can estimate the best transformation for the basic linear model which should result in diagnostic plots which have less of a departure from the linear regression assumptions. The R-Squared value has increased from 0.807246 (Figure \ref{fig:basicmodeloutput}) to 0.860190 in the transformed model, indicating that the transformed model is able to explain more variability in the predicted values than the initial model was able to. Furthermore, there appears to be a significantly less departure from the linear regression assumptions as is seen in the diagnostic plots.
 
 
-\end{enumerate}
-In order to determine if these four assumption are held, we can investigate the diagnostic plots that SAS also generates with the PROC GLM function.
+\begin{figure}
+\includegraphics[scale=1]{basic_model_output.png}
+\caption{Basic model output}
+\label{fig:basicmodeloutput}
+\end{figure}
 
-\subsection*{Diagnostic Plots}
+\begin{figure}
+\includegraphics[scale=1]{basic_model_estimates.png}
+\caption{Basic model estimates}
+\label{fig:basicmodelestimate}
+\end{figure}
 
-\includegraphics[scale=0.5]{Diagnostic_Plots.png}
+\begin{figure}
+\centering
+\includegraphics[scale=0.7]{basic_model_diagnostics.png}
+\caption{Model Diagnostics for Basic Model with Interactions}
+\label{fig:basicmodeldiagnostics}
+\end{figure}
 
-In the Residual vs. Predicted Value plot (top left) we see a fanning pattern in the residuals. While the first assumption of the mean approximately being zero may hold, there seems to be a departure from the second assumption of constant variance; that is, there is hetereoskedasticity present in the dataset. A transform may be required in order to reinstate the constant variance assumption. In the Quantile-Quantile plot (middle left) we see that the points are not hugging the y=x line very strongly. As such, it seems that there is also a departure from the fourth assumption, which is that the residuals are normally distributed. If the residuals were normally distributed, the points would hug the y=x line a lot more tightly. We also know that there are more than 20 observations in our dataset, so we expect the Quantile-Quantile plot to be normal.
+\begin{figure}
+\centering
+\includegraphics[scale=0.5]{box_cox_analysis.png}
+\caption{Box Cox Analysis for Basic Model with Interactions}
+\label{fig:boxcoxanalysis}
+\end{figure}
 
-In regards with outliers, we see a strongly influential point in the Cook's Distance plot (middle riht) just above approximately 350 on the horizontal axis and it is clearly past the reference line. In fact, we also have a point in the RStudent vs. Leverage (top right) plot which is and outlier and a leverage point since it is past the horizontal and vertical reference lines. Furthermore from the RSdtudent vs Leverage plot there also seems to be a cluster of points that seem to have a lot of influence in the x-space between [0.2, 0.4] on the horizontal axis.
+\begin{figure}
+\centering
+\includegraphics[scale=1]{transformed_model_output.png}
+\caption{Transformed Model Output}
+\label{fig:transformedmodeloutput}
+\end{figure}
 
-While violating the second and fourth assumptions, our $R^2$ value sits at $0.809$. Perhaps the model can be transformed so that this $R^2$ value can be increased so that there is a better fit. The Box-Cox method is a good fit for this type of problem because there is no clear solution as to what the transformation should be. If the $Var(e)$~$E(y)$, it would make sense to apply a square root transformation or if $Var(e)$~$E(y)^2$ then it would make sense to apply a log transformation. However, neither of these are the case and a Box-Cox transformation seems like the best option.
-
-\includegraphics[scale=0.5]{boxcox.png}
-
-From our Box-Cox analysis, the ideal $\lambda = 2.75$. After applying the appropriate transformations to the dependent variable, here is what the diagnostics look like:
-
-\includegraphics[scale=0.5]{transformedDiagnostics.png}
-
-
-\includegraphics[scale=1]{diagnosticStats.png}
-
-Here the scatter in the Residual vs Predicted Value plot is a lot more random, and the fanning pattern seems to have disappeared. The residuals have also adhered a lot more to the constant variance assumption. The $R^2$ value has also increased from $0.809$ to $0.859$ indicating that the new model is able to explain more of the variance in the dataset. Furthermore, the points on the Quantile-Quantile plot also seem to hug the y=x line a lot more than they did in the previous model's Quantile-Quantile plot. Overall the new model is definitely better in fit than the previous model.
-
+\begin{figure}
+\centering
+\includegraphics[scale=0.7]{transformed_model_diagnostics.png}
+\caption{Transformed Model Diagnostics}
+\label{fig:transformedmodeldiagnostics}
+\end{figure}
 
 
 \end{document}
