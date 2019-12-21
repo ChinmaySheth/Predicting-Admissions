@@ -18,4 +18,4 @@ The dataset that I am using was obtained from Kaggle and it contains data on uni
 8. Research
 9. Chance of Admit
 
-The dataset contains 400 entries with no data missing.
+The dataset contains 400 entries with no data missing. The only categorical variable is Research, as Serial No. is not considered, and the rest of the variables are continuous. The full report is presented inside the LaTeX folder.
