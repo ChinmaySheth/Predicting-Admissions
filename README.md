@@ -22,6 +22,6 @@ The dataset contains 400 entries with no data missing. The only categorical vari
 
 ## Results
 
-Using SAS procedures, I was able to develop a model which explained the predicted results 4.95% more accurately than the base model with fewer covariates being used, thus resulting in less computational power for future use and increased accuracy.
+Using SAS procedures, I was able to develop a model which explained the predicted results 4.95% more accurately than the base model which contained 14 covariates compared to the reduced model which contained only six, thus resulting in less computational power for future use and increased accuracy.
 
-The full report is presented in the PDF file in the root folder.
+The full report is presented available in the LaTeX folder in the repository.
