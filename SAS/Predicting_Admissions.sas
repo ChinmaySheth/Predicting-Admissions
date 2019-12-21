@@ -36,3 +36,9 @@ TITLE "Multiple Linear Regression -- Admission Prediction Data";
 	;
 		
 	run;
+	
+Title "Data BIC";
+proc glmselect Data=admpredmodif;
+	class Research;
+	model transformedCOA = GRE_Score TOEFL_Score SOP LOR CGPA University_Rating Research GRE_Score * Research TOEFL_Score * Research SOP * Research LOR * Research CGPA * Research University_Rating * Research /choose=BIC ;
+run;
