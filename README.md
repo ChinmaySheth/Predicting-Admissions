@@ -18,4 +18,10 @@ The dataset that I am using was obtained from Kaggle and it contains data on uni
 8. Research
 9. Chance of Admit
 
-The dataset contains 400 entries with no data missing. The only categorical variable is Research, as Serial No. is not considered, and the rest of the variables are continuous. The full report is presented in the PDF file in the root folder.
+The dataset contains 400 entries with no data missing. The only categorical variable is Research, as Serial No. is not considered, and the rest of the variables are continuous. 
+
+## Results
+
+Using SAS procedures, I was able to develop a model which explained the predicted results 4.95% more accurately than the base model with fewer covariates being used, thus resulting in less computational power for future use and increased accuracy.
+
+The full report is presented in the PDF file in the root folder.
