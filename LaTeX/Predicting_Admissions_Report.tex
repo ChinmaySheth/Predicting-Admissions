@@ -110,7 +110,7 @@ In the diagnostic plots from Figure \ref{fig:basicmodeldiagnostics} there is a d
 \end{figure}
 
 \subsection*{Transformations}
-Using the data-driven Box-Cox technique, showed in Figure \ref{fig:boxcoxanalysis}, we can estimate the best transformation for the basic linear model which should result in diagnostic plots which have less of a departure from the linear regression assumptions. The R-Squared value has increased from 0.807246 (Figure \ref{fig:basicmodeloutput}) to 0.860190 in the transformed model, indicating that the transformed model is able to explain more variability in the predicted values than the initial model was able to. Furthermore, there appears to be a significantly less departure from the linear regression assumptions as is seen in the diagnostic plots.
+Using the data-driven Box-Cox technique, showed in Figure \ref{fig:boxcoxanalysis}, we can estimate the best transformation for the basic linear model which should result in diagnostic plots which have less of a departure from the linear regression assumptions. The R-Squared value has increased from 0.807246 (Figure \ref{fig:basicmodeloutput}) to 0.860190 in the transformed model, indicating that the transformed model is able to explain more variability in the predicted values than the initial model was able to. However, there is still a heteroskedastic pattern in the Predicted Value vs Residual Values diagnostic plot. As such, a general linear model will not be suitable for developing a predictor model for this dataset.
 
 \begin{figure}
 \centering
@@ -127,32 +127,8 @@ Using the data-driven Box-Cox technique, showed in Figure \ref{fig:boxcoxanalysi
 \label{fig:transformedmodeldiagnostics}
 \end{figure}
 
-\subsection*{Model Selection}
-
-Now that the regression assumptions have been satisfied, model selection can be performed in order to determine whether all the covariates are truly necessary. According to the \href{https://www.oxfordreference.com/view/10.1093/oi/authority.20110803100346221}{Principle of Parsimony}, we want to be able to explain the variability in the model with the fewest covariates possible, that is, we want to maximize the Adjusted R-squared value while having the fewest number of covariate. In SAS, the GLMSELECT procedure with BIC can be used in order to select the best model. 
-
-The results of this are presented in Figure \ref{fig:bic} which shows that only the following covariates are meaningful to the model:
-
-\begin{figure}
-\centering
-\includegraphics[scale=0.6]{bic.png}
-\caption{BIC Model Selection}
-\label{fig:bic}
-\end{figure}
-
-\begin{enumerate}
-
-\item GRE Score
-\item TOEFL Score
-\item LOR
-\item Research
-\item CGPA * Research (Interaction Term)
-\item University Rating * Research (Interaction Term)
-
-\end{enumerate}
-
 \section*{Conclusion}
 
-Overall in this exercise, using SAS, we determined that not all of the covariates that were provided were important in model selection. Furthermore, 85.67\% of the variability in the predicted values could be explained with the reduced model that was determined with BIC. The reduced model resulted in an increase in the Adjusted R-Squared value of 4.95\%. 
+Overall, in this exercise to determine whether a linear model is suitable for this dataset, I concluded that a linear model will not be suitable as the Residual vs Predicted Values plot still displayed heteroskedastic patterns after transformations, indicating that there is a significant departure from the linear regression assumptions. As such, different models will have to be tested in order to build the most accurate predictor model.
 
 \end{document}

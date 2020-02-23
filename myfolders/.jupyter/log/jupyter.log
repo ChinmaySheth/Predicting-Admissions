@@ -1,0 +1,73 @@
+[W 21:01:06.326 LabApp] All authentication is disabled.  Anyone who can connect to this server will be able to run code.
+[I 21:01:06.380 LabApp] JupyterLab extension loaded from /usr/lib64/python3.5/site-packages/jupyterlab
+[I 21:01:06.381 LabApp] JupyterLab application directory is /usr/share/jupyter/lab
+[W 21:01:06.385 LabApp] JupyterLab server extension not enabled, manually loading...
+[I 21:01:06.419 LabApp] JupyterLab extension loaded from /usr/lib64/python3.5/site-packages/jupyterlab
+[I 21:01:06.420 LabApp] JupyterLab application directory is /usr/share/jupyter/lab
+[I 21:01:06.421 LabApp] Serving notebooks from local directory: /folders/myfolders
+[I 21:01:06.422 LabApp] The Jupyter Notebook is running at:
+[I 21:01:06.422 LabApp] http://(localhost.localdomain or 127.0.0.1):8890/jupyter/
+[I 21:01:06.422 LabApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
+[I 21:02:28.557 LabApp] 302 GET /jupyter/ (127.0.0.1) 3.79ms
+[I 21:02:30.396 LabApp] Node v8.9.4
+    
+[I 21:02:30.756 LabApp] Build is up to date
+[I 21:02:31.463 LabApp] Kernel started: 7e811a2e-f109-41d1-adcd-0d087796befd
+[I 21:02:33.085 LabApp] Adapting to protocol v5.1 for kernel 7e811a2e-f109-41d1-adcd-0d087796befd
+[I 21:02:33.086 LabApp] Adapting to protocol v5.1 for kernel 7e811a2e-f109-41d1-adcd-0d087796befd
+[I 21:04:31.306 LabApp] Saving file at /Predicting_Admissions/diagnostics.ipynb
+[I 21:04:31.788 LabApp] Saving file at /Predicting_Admissions/diagnostics.ipynb
+[I 21:04:53.769 LabApp] Starting buffering for 7e811a2e-f109-41d1-adcd-0d087796befd:52b0927f-19cc-47ec-a34f-bb41a32f9ce4
+[I 21:04:54.363 LabApp] Node v8.9.4
+    
+[I 21:04:54.652 LabApp] Build is up to date
+[I 21:04:54.961 LabApp] Adapting to protocol v5.1 for kernel 7e811a2e-f109-41d1-adcd-0d087796befd
+[I 21:05:03.895 LabApp] Adapting to protocol v5.1 for kernel 7e811a2e-f109-41d1-adcd-0d087796befd
+[I 21:06:54.907 LabApp] Saving file at /Predicting_Admissions/diagnostics.ipynb
+[I 21:08:54.989 LabApp] Saving file at /Predicting_Admissions/diagnostics.ipynb
+[I 21:12:39.908 LabApp] Creating new notebook in /Predicting_Admissions
+[I 21:12:40.159 LabApp] Kernel started: 28941999-9b2f-4fda-a6b5-211cc5e75571
+[I 21:12:43.315 LabApp] Adapting to protocol v5.1 for kernel 28941999-9b2f-4fda-a6b5-211cc5e75571
+[I 21:12:43.316 LabApp] Adapting to protocol v5.1 for kernel 28941999-9b2f-4fda-a6b5-211cc5e75571
+[I 21:12:55.028 LabApp] Saving file at /Predicting_Admissions/diagnostics.ipynb
+[I 21:14:40.011 LabApp] Saving file at /Predicting_Admissions/Untitled.ipynb
+[I 21:14:56.722 LabApp] Kernel started: f19fb6ee-3529-48c6-849a-b4cf585b3256
+[I 21:15:00.189 LabApp] Adapting to protocol v5.1 for kernel f19fb6ee-3529-48c6-849a-b4cf585b3256
+[I 21:18:54.909 LabApp] Saving file at /Predicting_Admissions/diagnostics.ipynb
+[I 21:20:54.912 LabApp] Saving file at /Predicting_Admissions/diagnostics.ipynb
+[I 21:22:54.972 LabApp] Saving file at /Predicting_Admissions/diagnostics.ipynb
+[I 21:24:56.870 LabApp] Saving file at /Predicting_Admissions/diagnostics.ipynb
+[I 21:26:56.887 LabApp] Saving file at /Predicting_Admissions/diagnostics.ipynb
+[I 21:28:56.889 LabApp] Saving file at /Predicting_Admissions/diagnostics.ipynb
+[I 21:30:56.897 LabApp] Saving file at /Predicting_Admissions/diagnostics.ipynb
+[I 21:32:56.924 LabApp] Saving file at /Predicting_Admissions/diagnostics.ipynb
+[I 21:34:46.322 LabApp] Saving file at /Predicting_Admissions/Admission_Predict.csv
+[I 21:34:57.032 LabApp] Saving file at /Predicting_Admissions/diagnostics.ipynb
+[I 21:36:57.140 LabApp] Saving file at /Predicting_Admissions/diagnostics.ipynb
+[I 21:38:57.240 LabApp] Saving file at /Predicting_Admissions/diagnostics.ipynb
+[I 21:40:57.327 LabApp] Saving file at /Predicting_Admissions/diagnostics.ipynb
+[I 21:42:57.420 LabApp] Saving file at /Predicting_Admissions/diagnostics.ipynb
+[I 21:44:57.595 LabApp] Saving file at /Predicting_Admissions/diagnostics.ipynb
+[I 21:46:57.708 LabApp] Saving file at /Predicting_Admissions/diagnostics.ipynb
+[I 21:48:57.809 LabApp] Saving file at /Predicting_Admissions/diagnostics.ipynb
+[I 21:50:57.895 LabApp] Saving file at /Predicting_Admissions/diagnostics.ipynb
+[I 21:52:57.992 LabApp] Saving file at /Predicting_Admissions/diagnostics.ipynb
+[I 21:54:58.085 LabApp] Saving file at /Predicting_Admissions/diagnostics.ipynb
+[I 21:56:58.238 LabApp] Saving file at /Predicting_Admissions/diagnostics.ipynb
+[I 22:00:58.342 LabApp] Saving file at /Predicting_Admissions/diagnostics.ipynb
+[I 22:04:58.440 LabApp] Saving file at /Predicting_Admissions/diagnostics.ipynb
+[I 22:06:58.556 LabApp] Saving file at /Predicting_Admissions/diagnostics.ipynb
+[I 22:10:58.654 LabApp] Saving file at /Predicting_Admissions/diagnostics.ipynb
+[I 22:12:58.806 LabApp] Saving file at /Predicting_Admissions/diagnostics.ipynb
+[I 22:14:58.951 LabApp] Saving file at /Predicting_Admissions/diagnostics.ipynb
+[I 22:16:59.059 LabApp] Saving file at /Predicting_Admissions/diagnostics.ipynb
+[I 22:18:59.183 LabApp] Saving file at /Predicting_Admissions/diagnostics.ipynb
+[I 22:20:59.346 LabApp] Saving file at /Predicting_Admissions/diagnostics.ipynb
+[I 22:21:52.724 LabApp] Saving file at /Predicting_Admissions/diagnostics.ipynb
+[I 22:23:52.818 LabApp] Saving file at /Predicting_Admissions/diagnostics.ipynb
+[I 22:24:31.059 LabApp] Kernel started: 2962ec13-55e3-45b0-927d-883439c7cb2c
+[I 22:24:36.978 LabApp] Adapting to protocol v5.1 for kernel 2962ec13-55e3-45b0-927d-883439c7cb2c
+[I 22:25:52.919 LabApp] Saving file at /Predicting_Admissions/diagnostics.ipynb
+[I 22:27:53.032 LabApp] Saving file at /Predicting_Admissions/diagnostics.ipynb
+[I 22:40:22.932 LabApp] Uploading file to /TrainingSet.csv
+[I 22:42:02.024 LabApp] Saving file at /Predicting_Admissions/diagnostics.ipynb
